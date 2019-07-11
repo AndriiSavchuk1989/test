@@ -13,6 +13,10 @@ export class TableWrapper extends React.Component {
   };
 
   render() {
-    return <table />;
+    return (
+      <table>
+        <tbody />
+      </table>
+    );
   }
 }
