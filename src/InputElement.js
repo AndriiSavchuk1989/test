@@ -21,6 +21,7 @@ export class InputElement extends React.Component {
 
   changeStateValue = value => {
     this.setState({ inputValue: value });
+    this.props.changeTracker(value);
   };
 
   returnDefaultValue = value => {

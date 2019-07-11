@@ -1,5 +1,7 @@
 import React from "react";
 
+import { tableRowCreator } from "./tableRowCreator";
+
 export class TableWrapper extends React.Component {
   constructor(props) {
     super(props);
@@ -10,12 +12,18 @@ export class TableWrapper extends React.Component {
     this.setState({
       currentChangedValue: value
     });
+    console.log("state from table___", this.state.currentChangedValue);
   };
 
   render() {
+    const { list } = this.props;
     return (
       <table>
-        <tbody />
+        <tbody>
+          {list.map(listItem =>
+            tableRowCreator(listItem, this.onTrackChangedValue)
+          )}
+        </tbody>
       </table>
     );
   }
