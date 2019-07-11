@@ -9,10 +9,15 @@ export class TableWrapper extends React.Component {
   }
 
   onTrackChangedValue = value => {
-    this.setState({
-      currentChangedValue: value
+    this.setState(() => {
+      return { currentChangedValue: value };
     });
     console.log("state from table___", this.state.currentChangedValue);
+    this.updateCellValue(this.state.currentChangedValue);
+  };
+
+  updateCellValue = value => {
+    console.log("updated value___", value);
   };
 
   render() {
