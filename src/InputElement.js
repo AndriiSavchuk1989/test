@@ -16,9 +16,7 @@ export class InputElement extends React.Component {
     const {
       target: { value }
     } = event;
-    if (value.length) {
-      this.changeStateValue(value);
-    }
+    this.changeStateValue(value);
   };
 
   changeStateValue = value => {
@@ -33,8 +31,7 @@ export class InputElement extends React.Component {
     const {
       target: { value }
     } = event;
-    console.log("value after mouse out event", value);
-    if (value.length) {
+    if (!value.length) {
       this.returnDefaultValue(this.state.initialValue);
     }
   };
